@@ -1,0 +1,19 @@
+q
+help
+colorscheme dracula
+config
+autosave
+quit
+refresh 
+colorscheme green
+colorscheme amazon
+colorscheme 
+add /home/david/Music
+w
+y
+set output_plugin=pulse
+refresh
+help 
+add /home/david/Music/
+add directory
+add ~/Music/

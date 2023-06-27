@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "modules-left": [
+    "custom/launcher",
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "custom/clock"
+  ],
+  "modules-right": [
+    "tray",
+    "inhibitor",
+    "network",
+    "memory",
+    "cpu",
+    "pulseaudio"
+    // "custom/exit"
+  ],
+  "custom/launcher": {
+    "format": "<span color='#F38BA8'></span>",
+    // "on-click": "wofi --show drun --insensitive --allow-images"
+    "on-click": "rofi -show drun"
+  },
+  "wlr/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    // "on-scroll-up": "hyprctl dispatch workspace e+1",
+    // "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent_workspaces": {
+      "01": [],
+      "02": [],
+      "03": [],
+      "04": [],
+      "05": [],
+      "06": [],
+      "07": [],
+      "08": [],
+      "09": [],
+      "10": []
+    }
+    // "format-icons": {
+    //   "1": "",
+    //   "2": "",
+    //   "3": "ﭮ",
+    //   "4": "",
+    //   "5": "",
+    //   "6": "",
+    //   "7": "7.",
+    //   "8": "8.",
+    //   "9": "9.",
+    //   "10": "10.",
+    //   // "default": "",
+    //   // "active": ""
+    // }
+  },
+  "inhibitor": {
+    "on-click": "",
+    "what": "idle",
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "on-click": "",
+    "icon-size": 17,
+    "spacing": 10
+  },
+    "custom/clock": {
+        "exec": "date '+%Y-%m-%d %H:%M'",
+        "interval": 60
+    },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {essid}",
+    "format-linked": "{ifname} (No IP) 󰈁",
+    "format-disconnected": "󰈂 Disc.",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    // "on-click": "wofi-wifi-menu",
+    "on-click": "kitty -e nmtui"
+  },
+  "cpu": {
+    "on-click": "",
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "memory": {
+    "on-click": "",
+    "interval": 30,
+    "format": " {used:0.1f}G/{total:0.1f}G",
+    "max-length": 15
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ Muted",
+    "on-click": "~/.config/hypr/scripts/volume_ctl.sh",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+}

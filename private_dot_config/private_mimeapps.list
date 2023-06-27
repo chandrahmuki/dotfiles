@@ -1,0 +1,7 @@
+[Default Applications]
+image/png=userapp-imv-B4DD71.desktop
+image/jpeg=userapp-imv-B4DD71.desktop
+
+[Added Associations]
+image/png=userapp-imv-B4DD71.desktop;
+image/jpeg=userapp-imv-B4DD71.desktop;
