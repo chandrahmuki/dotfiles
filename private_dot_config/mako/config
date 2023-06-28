@@ -1,7 +1,7 @@
 background-color=#282a36
 text-color=#44475a
 border-color=#282a36
-default-timeout=7000
+default-timeout=5000
 
 
 [urgency=low]
