@@ -10,6 +10,18 @@
 window#waybar {
   background: #15121b;
   color: #cdd6f4;
+  border-radius: 10px;
+  margin:100px;
+}
+
+
+window > box {
+
+background-color: transparent;
+margin: .3rem;
+margin-bottom: 0;
+padding: .9rem;
+
 }
 
 tooltip {
@@ -19,6 +31,60 @@ tooltip {
   border-style: solid;
   border-color: #11111b;
 }
+
+#tags {
+	margin-top: 6px;
+	margin-left: 12px;
+	font-size: 4px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	min-width: 0;
+	background: #0e1218;
+	transition: none;
+}
+
+#tags button {
+	min-width: 50px;
+	transition: none;
+	color: #dfd2c4;
+	background: transparent;
+	font-size: 16px;
+	border-radius: 2px;
+}
+
+#tags button.occupied {
+	transition: none;
+	color: #c5663d;
+	background: transparent;
+	font-size: 4px;
+}
+
+#tags button.focused {
+	color: #cc8a5e;
+    border-top: 2px solid #cc8a5e;
+    border-bottom: 2px solid #cc8a5e;
+}
+
+#tags button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: #ffffee;
+    border-color: #ffffee;
+    color: #ffffee;
+}
+
+#tags button.focused:hover {
+    color: #ffffee;
+}
+
+#tags button.urgent {
+        border-top: 2px solid #fb4934;
+        border-bottom: 2px solid #fb4934;
+}
+
+
+
 
 #workspaces button {
   padding: 5px;
@@ -53,13 +119,13 @@ tooltip {
   padding-right: 7px;
 }
 #custom-language,
-#clock,
+#custom-clock,
 #pulseaudio,
 #cpu,
 #memory,
 #network,
-#workspaces,
 #tray,
+#mode,
 
 #tray {
   border-radius: 10px;
@@ -96,7 +162,7 @@ tooltip {
   color: #f5c2e7;
 }
 
-#clock {
+#custom-clock {
   color: #f9e2af;
   border-radius: 10px;
   /* padding-right: 5px */
@@ -114,4 +180,12 @@ tooltip {
   color: #7dc4e4;
 }
 
+#mode {	
+  color: #7dc4e4;
+}
+
+
+#tags {
+  color: #89b4fa;
+}
 

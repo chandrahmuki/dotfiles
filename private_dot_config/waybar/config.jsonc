@@ -2,9 +2,13 @@
   "layer": "top",
   "position": "top",
   "height": 38,
+  "width": 2160,
+  "spacing": 10, // Gaps between modules (4px)
+  "padding": 100,
   "modules-left": [
     "custom/launcher",
-    "wlr/workspaces"
+    "river/mode",
+    "river/tags"
   ],
   "modules-center": [
     "custom/clock"
@@ -21,9 +25,9 @@
   "custom/launcher": {
     "format": "<span color='#F38BA8'></span>",
     // "on-click": "wofi --show drun --insensitive --allow-images"
-    "on-click": "rofi -show drun"
+    "on-click": "fuzzel --show drun"
   },
-  "wlr/workspaces": {
+  "river/tags": {
     "disable-scroll": false,
     "all-outputs": true,
     "on-click": "activate",
@@ -57,6 +61,9 @@
     //   // "active": ""
     // }
   },
+    "river/mode": {
+        "format": "mode: {}"
+    },
   "inhibitor": {
     "on-click": "",
     "what": "idle",
@@ -82,7 +89,6 @@
     "format-disconnected": "󰈂 Disc.",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     // "on-click": "wofi-wifi-menu",
-    "on-click": "kitty -e nmtui"
   },
   "cpu": {
     "on-click": "",
@@ -99,7 +105,6 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "ﱝ Muted",
-    "on-click": "~/.config/hypr/scripts/volume_ctl.sh",
     "scroll-step": 1,
     "format-icons": {
       "headphone": "",
@@ -114,5 +119,5 @@
         ""
       ]
     }
-  },
-}
+  }
+},
