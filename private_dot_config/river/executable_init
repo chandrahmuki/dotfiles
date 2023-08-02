@@ -1,7 +1,22 @@
 #!/bin/env bash
 
+# Bar
+
+riverctl spawn "swaybg -m fill -i ~/Pictures/wall.png"
+riverctl spawn pipewire
+riverctl spawn pipewire-pulse
+riverctl spawn wireplumber
+riverctl spawn /usr/libexec/polkit-kde-authentication-agent-1
+riverctl spawn mako
+riverctl spawn kanshi
+riverctl spawn waybar
+riverctl spawn xdg-desktop
+riverctl spawn rivertile
+riverctl output-layout rivertile
+
+
 # Basic River commands
-riverctl map normal Super Return spawn kitty
+riverctl map normal Super Return spawn "wezterm start --always-new-process"
 riverctl map normal Super Q close
 riverctl map normal Super+Shift E exit
 riverctl map normal Super+Shift J swap next
@@ -9,21 +24,21 @@ riverctl map normal Super+Shift K swap previous
 riverctl map normal Super P spawn "fuzzel --show drun"
 
 # Rivercarro CMDs
-riverctl map normal Super H send-layout-cmd rivercarro "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivercarro "main-ratio +0.05"
-riverctl map normal Super+Shift H send-layout-cmd rivercarro "main-count +1"
-riverctl map normal Super+Shift L send-layout-cmd rivercarro "main-count -1"
-riverctl map normal Super Up    send-layout-cmd rivercarro "main-location top"
-riverctl map normal Super Right send-layout-cmd rivercarro "main-location right"
-riverctl map normal Super Down  send-layout-cmd rivercarro "main-location bottom"
-riverctl map normal Super Left  send-layout-cmd rivercarro "main-location left"
-riverctl map normal Super M send-layout-cmd rivercarro "main-location monocle"
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+riverctl map normal Super M send-layout-cmd rivertile "main-location monocle"
 
 # Super+Alt+Shift+{H,J,K,L} to resize views
-riverctl map normal Super+Alt+Shift H resize horizontal -100
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
+riverctl map normal Alt+Shift H resize horizontal -100
+riverctl map normal Alt+Shift J resize vertical 100
+riverctl map normal Alt+Shift K resize vertical -100
+riverctl map normal Alt+Shift L resize horizontal 100
 
 # Super + Left Mouse Button to move views
 riverctl map-pointer normal Super BTN_LEFT move-view
@@ -82,21 +97,6 @@ done
 
 # Print Screen
 river map normal Super Print spawn 'slurp | grim -g - Screencap.png'
-
-# Bar
-
-riverctl spawn pipewire
-riverctl spawn pipewire-pulse
-riverctl spawn wireplumber
-riverctl spawn /usr/libexec/polkit-kde-authentication-agent-1
-riverctl spawn mako
-riverctl spawn waybar
-riverctl spawn "swaybg -i ~/Pictures/wall.png -m fill"
-riverctl spawn xdg-desktop
-riverctl spawn rivertile
-riverctl output-layout rivertile
-
-
 
 # Colors
 riverctl background-color 0x1e1e2e
